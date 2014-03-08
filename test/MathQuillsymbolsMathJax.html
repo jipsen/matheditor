@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="support/home.css">
+ <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']]},TeX:{equationNumbers:{autoNumber:"AMS"}}});</script>
+ <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ <title>MathQuill symbols in MathJax</title>
+</head>
+<body>
+<div style="margin-left:10px;margin-top:10px"><br>
+<h3>Complete(?) list of MathQuill symbols rendered by MathJax</h3>
+<h4>Peter Jipsen, February 2014</h4> This rendering shows that many of
+the MathQuill symbolnames are not standard LaTeX commands. There are
+also some conflicts (e.g. \inf = \infty in MathQuill, but renders as
+"inf" in LaTeX). This was perhaps a design choice of MathQuill, aiming
+to provide common synonyms for symbols. However it creates problems
+for rendering standard LaTeX. It would be useful to have a version of
+MathQuill that stays as close to LaTeX as possible. (But keeping such
+a version in sync with MathQuill development would be probelmatic.)
+<p>
+Another version that makes use of an ASCIIMath-like syntax would also
+be helpful. The ASCIIMath philosophy would be to render each symbols
+by at most two ascii expressions: the LaTeX name (if it is short and
+memorable, without leading backslash) and a short name that resembles
+the shape of the symbol (if possible, else no second name). The
+desmos.com graphing calculator is based on MathQuill and uses (a
+restricted form of) such input.
+
+<p>
+\mathrm: $\mathrm{abc123@!}$<br>
+\mathit: $\mathit{abc123@!}$ does it work?? cf. $abc123@!$<br>
+\mathbf: $\mathbf{abc123@!}$<br>
+\mathsf: $\mathsf{abc123@!}$<br>
+\mathtt: $\mathtt{abc123@!}$<br>
+\mathcal, \mathfrak: not available in MathQuill??<br>
+<br>
+\underline: $\underline{xyz}$, \underline{\sqrt x}: $\underline{\sqrt x}$<br>
+<br>
+\overline{xyz}: $\overline{xyz}$, \overline{\sqrt x}$\overline{\sqrt x}$<br>
+<br>
+SubSup x_1^2: $x_1^2$, x_{1}^{2}: $x_{1}^{2}$<br>
+<br>
+subscript x_11 $x_11$, x_{11}: $x_{11}$, x\subscript11: $x\subscript11$<br>
+<br>
+superscript x^12: $x^12$, x^{12}: $x^{12}$, x\superscript12: $x\superscript12$, x\supscript12: $x\supscript12$<br>
+<br>
+\frac xy: $\frac xy$, \dfrac xy: $\dfrac xy$, \cfrac xy: $\cfrac xy$, \fraction xy: $\fraction xy$<br>
+<br>
+xy\over uv: $xy over uv$,   x{y\over u}v: $x{y over u}v$ only for live fractions<br>
+<br>
+xy/uv: $xy/uv$,   x{y/u}v: $x{y/u}v$ only for live fractions<br>
+<br>
+\sqrt{x^2}: $\sqrt{x^2}$, \sqrt[n]{x^n}: $\sqrt[n]{x^n}$, root and bar have small gap in Firefox<br>
+<br>
+(), [], \left\{\right\}, \langle, \rangle: $(), [], (], \left\{\right\}, leftlangle rightrangle$, \left{\right} need to be matched, \{\},\langle,\rangle don't work??<br>
+<br>
+& lang; $&lang;$, & rang; $&rang;$, <br>
+<br>
+pipe |: $|x$ works unmatched<br>
+<br>
+x\text{ hi }y: $x\text{ hi }y$<br>
+x\textnormal{ hi }y: $x\textnormal{ hi }y$ <br>
+x\textrm{ hi }y: $x\textrm{ hi }y$ <br>
+x\textup{ hi }y: $x\textup{ hi }y$<br>
+x\textmd{ hi }y: $x\textmd{ hi }y$<br>
+a \emph{all}b: $a \emph{all}b$, a \em{all}b: $a \em{all}b$ why do \em??<br>
+a \italic{all}b: $a \italic{all}b$, a \italics{all}b: $a \italics{all}b$ ??<br>
+x\textit{ hi }y: $x\textit{ hi }y$<br>
+x\textbf{ hi }y: $x\textbf{ hi }y$, x\bold{ hi }y: $x\bold{ hi }y$, x\strong{ hi }y: $x\strong{ hi }y$, <br>
+x\textsf{ hi }y: $x\textsf{ hi }y$, x\sf{ hi }y: $x\sf{ hi }y$<br>
+x\texttt{ hi }y: $x\texttt{ hi }y$, x\tt{ hi }y: $x\tt{ hi }y$<br>
+x\textsc{ HIhi }y: $x\textsc{ HIhi }y$<br>
+x\uppercase{ HIhi }y: $x\uppercase{ HIhi }y$<br>
+x\lowercase{ HIhi }y: $x\lowercase{ HIhi }y$<br>
+<br>
+\binom nk: $\binom nk$<br>
+<br>
+n\choose k: $n choose k$ does it work?<br>
+<br>
+\vector?<br>
+<br>
+\f: $\f$ ?? why?<br>
+<br>
+prime x': $x'$, x'': $x''$, x''': $x'''$<br>
+<br>
+@: $@$, \&; $\&$, \%: $\%$, %: $%$<br>
+<br>
+\alpha: $\alpha$<br>
+\beta: $\beta$<br>
+\gamma: $\gamma$<br>
+\delta: $\delta$<br>
+\zeta: $\zeta$<br>
+\eta: $\eta$<br>
+\theta: $\theta$<br>
+\iota: $\iota$<br>
+\kappa: $\kappa$<br>
+\mu: $\mu$<br>
+\nu: $\nu$<br>
+\xi: $\xi$<br>
+\rho: $\rho$<br>
+\sigma: $\sigma$<br>
+\tau: $\tau$<br>
+\chi: $\chi$<br>
+\psi: $\psi$<br>
+<br>
+\phi: $\phi$ //W3C or Unicode?  [PJipsen: Comments from mathquill.js]<br>
+\phiv: $\phiv$ //Elsevier and 9573-13<br>
+\varphi: $\varphi$ //AMS and LaTeX<br>
+<br>
+\epsilon: $\epsilon$ //W3C or Unicode?<br>
+\epsiv: $\epsiv$ //Elsevier and 9573-13<br>
+\varepsilon: $\varepsilon$ //AMS and LaTeX<br>
+<br>
+\piv: $\piv$ //W3C/Unicode and Elsevier and 9573-13<br>
+\varpi: $\varpi$ //AMS and LaTeX<br>
+<br>
+\sigmaf: $\sigmaf$ //W3C/Unicode<br>
+\sigmav: $\sigmav$ //Elsevier<br>
+\varsigma: $\varsigma$ //LaTeX<br>
+<br>
+\thetav: $\thetav$ //Elsevier and 9573-13<br>
+\vartheta: $\vartheta$ //AMS and LaTeX<br>
+\thetasym: $\thetasym$ //W3C/Unicode<br>
+<br>
+\upsilon: $\upsilon$ //AMS and LaTeX and W3C/Unicode<br>
+\upsi: $\upsi$ //Elsevier and 9573-13<br>
+<br>
+//these aren't even mentioned in the HTML character entity references<br>
+\gammad: $\gammad$ //Elsevier<br>
+\Gammad: $\Gammad$ //9573-13 -- was this a typo in the reference (see above)<br>
+\digamma: $\digamma$ //LaTeX<br>
+<br>
+\kappav: $\kappav$ //Elsevier<br>
+\varkappa: $\varkappa$ //AMS and LaTeX<br>
+<br>
+\rhov: $\rhov$ //Elsevier and 9573-13<br>
+\varrho: $\varrho$ //AMS and LaTeX<br>
+<br>
+//Greek constants, look best in un-italicised Times New Roman<br>
+\pi: $\pi$ <br>
+\lambda: $\lambda$ <br>
+<br>
+//uppercase greek letters<br>
+\Upsilon: $\Upsilon$ //LaTeX<br>
+\Upsi: $\Upsi$ //Elsevier and 9573-13<br>
+\upsih: $\upsih$ //W3C/Unicode "upsilon with hook"<br>
+\Upsih: $\Upsih$ //'cos it makes sense to me<br>
+<br>
+//other symbols with the same LaTeX command and HTML character entity reference<br>
+\Gamma: $\Gamma$<br>
+\Delta: $\Delta$<br>
+\Theta: $\Theta$<br>
+\Lambda: $\Lambda$<br>
+\Xi: $\Xi$<br>
+\Pi: $\Pi$<br>
+\Sigma: $\Sigma$<br>
+\Phi: $\Phi$<br>
+\Psi: $\Psi$<br>
+\Omega: $\Omega$<br>
+<br>
+Algebra<br>
+$x+y$<br>
+$x-y$, unary minus $-x$<br>
+$\pm x$, $\mp x$<br>
+x*y: $x*y$,    x\cdot y: $x\cdot y$,    x\sdot y: $x\sdot y$<br>
+x=y: $x=y$, x & lt; y: $x \lt y$, x& gt;y: $x \gt y$ can't use lt, gt on keyboard<br>
+<br>
+\sim: $\sim$<br>
+\cong: $\cong$<br>
+\equiv: $\equiv$<br>
+\oplus: $\oplus$<br>
+\otimes: $\otimes$ <br>
+\times: $\times$ <br>
+\div: $\div$, \divide: $\divide$, \divides: $\divides$<br>
+\ne: $\ne$, \neq: $\neq$ <br>
+\ast: $\ast$, \star: $\star$, \loast: $\loast$, \lowast: $\lowast$<br>
+\therefor: $\therefor$, \therefore: $\therefore$<br>
+\cuz: $\cuz$, \because: $\because$ <br>
+<br>
+\prop: $\prop$, \propto: $\propto$ <br>
+\asymp: $\asymp$, \approx: $\approx$ <br>
+<br>
+\lt: $\lt$ <br>
+\gt: $\gt$ <br>
+\le: $\le$, \leq: $\leq$ <br>
+\ge: $\ge$, \geq: $\geq$ <br>
+\isin: $\isin$, \in: $\in$ <br>
+\notin: $\notin$<br>
+\ni: $\ni$, \contains: $\contains$ <br>
+\notni: $\notni$, \niton: $\niton$, \notcontains: $\notcontains$, \doesnotcontain: $\doesnotcontain$<br>
+<br>
+\sub: $\sub$, \subset: $\subset$ <br>
+\sup: $\sup$, \supset: $\supset$, \superset: $\superset$<br>
+\nsub: $\nsub$, \notsub: $\notsub$, \nsubset: $\nsubset$, \notsubset: $\notsubset$<br>
+\nsup: $\nsup$, \notsup: $\notsup$, \nsupset: $\nsupset$, \notsupset: $\notsupset$, \nsuperset: $\nsuperset$, \notsuperset: $\notsuperset$<br>
+<br>
+\sube: $\sube$, \subeq: $\subeq$, \subsete: $\subsete$, \subseteq: $\subseteq$<br>
+\supe: $\supe$, \supeq: $\supeq$, \supsete: $\supsete$, \supseteq: $\supseteq$, \supersete: $\supersete$, \superseteq: $\superseteq$<br>
+<br>
+\nsube: $\nsube$, \nsubeq: $\nsubeq$, \notsube: $\notsube$, \notsubeq: $\notsubeq$, \nsubsete: $\nsubsete$, \nsubseteq: $\nsubseteq$, \notsubsete: $\notsubsete$, \notsubseteq: $\notsubseteq$<br>
+\nsupe: $\nsupe$, \nsupeq: $\nsupeq$, \notsupe: $\notsupe$, \notsupeq: $\notsupeq$, \nsupsete: $\nsupsete$, \nsupseteq: $\nsupseteq$, \notsupsete: $\notsupsete$, \notsupseteq: $\notsupseteq$, \nsupersete: $\nsupersete$, \nsuperseteq: $\nsuperseteq$, \notsupersete: $\notsupersete$, \notsuperseteq: $\notsuperseteq$<br>
+<br>
+//sum, product, coproduct, integral<br>
+\sum: $\sum$, \summation: $\summation$ <br>
+\prod: $\prod$, \product: $\product$ <br>
+\coprod: $\coprod$, \coproduct: $\coproduct$ <br>
+\int: $\int$, \integral: $\integral$ <br>
+<br>
+//the canonical sets of numbers<br>
+\N: $\N$, \naturals: $\naturals$, \Naturals: $\Naturals$<br>
+<br>
+\P: $\P$, \primes: $\primes$, \Primes: $\Primes$, \projective: $\projective$, \Projective: $\Projective$, \probability: $\probability$, \Probability: $\Probability$<br>
+<br>
+\Z: $\Z$, \integers: $\integers$, \Integers: $\Integers$<br>
+<br>
+\Q: $\Q$, \rationals: $\rationals$, \Rationals: $\Rationals$<br>
+<br>
+\R: $\R$, \reals: $\reals$, \Reals: $\Reals$<br>
+<br>
+\C: $\C$, \complex: $\complex$, \Complex: $\Complex$, \complexes: $\complexes$, \Complexes: $\Complexes$, \complexplane: $\complexplane$, \Complexplane: $\Complexplane$, \ComplexPlane: $\ComplexPlane$<br>
+<br>
+\H: $\H$, \Hamiltonian: $\Hamiltonian$, \quaternions: $\quaternions$, \Quaternions: $\Quaternions$<br>
+<br>
+//spacing<br>
+\quad: $|\quad|$, \emsp: $|\emsp|$, \qquad: $|\qquad|$ <br>
+<br>
+\, \,, \: \:,  \; \;,  \! \!  //these cause mathquill-textbox errors??<br>
+<br>
+//binary operators<br>
+\diamond: $\diamond$ <br>
+\bigtriangleup: $\bigtriangleup$ <br>
+\ominus: $\ominus$ <br>
+\uplus: $\uplus$ <br>
+\bigtriangledown: $\bigtriangledown$ <br>
+\sqcap: $\sqcap$ <br>
+\triangleleft: $\triangleleft$ <br>
+\sqcup: $\sqcup$ <br>
+\triangleright: $\triangleright$ <br>
+\odot: $\odot$ <br>
+\bigcirc: $\bigcirc$ <br>
+\dagger: $\dagger$ <br>
+\ddagger: $\ddagger$ <br>
+\wr: $\wr$ <br>
+\amalg: $\amalg$ <br>
+<br>
+//relationship symbols<br>
+\models: $\models$ <br>
+\prec: $\prec$ <br>
+\succ: $\succ$ <br>
+\preceq: $\preceq$ <br>
+\succeq: $\succeq$ <br>
+\simeq: $\simeq$ <br>
+\mid: $\mid$ <br>
+\ll: $\ll$ <br>
+\gg: $\gg$ <br>
+\parallel: $\parallel$ <br>
+\bowtie: $\bowtie$ <br>
+\sqsubset: $\sqsubset$ <br>
+\sqsupset: $\sqsupset$ <br>
+\smile: $\smile$ <br>
+\sqsubseteq: $\sqsubseteq$ <br>
+\sqsupseteq: $\sqsupseteq$ <br>
+\doteq: $\doteq$ <br>
+\frown: $\frown$ <br>
+\vdash: $\vdash$ <br>
+\dashv: $\dashv$ <br>
+<br>
+//arrows<br>
+\longleftarrow: $\longleftarrow$ <br>
+\longrightarrow: $\longrightarrow$ <br>
+\Longleftarrow: $\Longleftarrow$ <br>
+\Longrightarrow: $\Longrightarrow$ <br>
+\longleftrightarrow: $\longleftrightarrow$ <br>
+\updownarrow: $\updownarrow$ <br>
+\Longleftrightarrow: $\Longleftrightarrow$ <br>
+\Updownarrow: $\Updownarrow$ <br>
+\mapsto: $\mapsto$ <br>
+\nearrow: $\nearrow$ <br>
+\hookleftarrow: $\hookleftarrow$ <br>
+\hookrightarrow: $\hookrightarrow$ <br>
+\searrow: $\searrow$ <br>
+\leftharpoonup: $\leftharpoonup$ <br>
+\rightharpoonup: $\rightharpoonup$ <br>
+\swarrow: $\swarrow$ <br>
+\leftharpoondown: $\leftharpoondown$ <br>
+\rightharpoondown: $\rightharpoondown$ <br>
+\nwarrow: $\nwarrow$ <br>
+<br>
+//Misc<br>
+\ldots: $\ldots$ <br>
+\cdots: $\cdots$ <br>
+\vdots: $\vdots$ <br>
+\ddots: $\ddots$ <br>
+\surd: $\surd$ <br>
+\triangle: $\triangle$ <br>
+\ell: $\ell$ <br>
+\top: $\top$ <br>
+\flat: $\flat$ <br>
+\natural: $\natural$ <br>
+\sharp: $\sharp$ <br>
+\wp: $\wp$ <br>
+\bot: $\bot$ <br>
+\clubsuit: $\clubsuit$ <br>
+\diamondsuit: $\diamondsuit$ <br>
+\heartsuit: $\heartsuit$ <br>
+\spadesuit: $\spadesuit$ <br>
+<br>
+//variable-sized<br>
+\oint: $\oint$ <br>
+\bigcap: $\bigcap$ <br>
+\bigcup: $\bigcup$ <br>
+\bigsqcup: $\bigsqcup$ <br>
+\bigvee: $\bigvee$ <br>
+\bigwedge: $\bigwedge$ <br>
+\bigodot: $\bigodot$ <br>
+\bigotimes: $\bigotimes$ <br>
+\bigoplus: $\bigoplus$ <br>
+\biguplus: $\biguplus$ <br>
+<br>
+//delimiters<br>
+\lfloor: $\lfloor$ <br>
+\rfloor: $\rfloor$ <br>
+\lceil: $\lceil$ <br>
+\rceil: $\rceil$ <br>
+\slash: $\slash$ <br>
+\opencurlybrace: $\opencurlybrace$ <br>
+\closecurlybrace: $\closecurlybrace$ <br>
+<br>
+//various symbols<br>
+\caret: $\caret$ <br>
+\underscore: $\underscore$ <br>
+\backslash: $\backslash$ <br>
+\vert: $\vert$ <br>
+\perp: $\perp$, \perpendicular: $\perpendicular$ <br>
+\nabla: $\nabla$, \del: $\del$ <br>
+\hbar: $\hbar$ <br>
+\AA: $\AA$, \Angstrom: $\Angstrom$, \angstrom: $\angstrom$<br>
+\ring: $\ring$, \circ: $\circ$, \circle: $\circle$<br>
+\bull: $\bull$, \bullet: $\bullet$ <br>
+\setminus: $\setminus$, \smallsetminus: $\smallsetminus$<br>
+\not: $\not$, \neg: $\neg$ <br>
+\dots: $\dots$, \ellip: $\ellip$, \hellip: $\hellip$, \ellipsis: $\ellipsis$, \hellipsis: $\hellipsis$<br>
+<br>
+\converges: $\converges$, \darr: $\darr$, \dnarr: $\dnarr$, \dnarrow: $\dnarrow$, \downarrow: $\downarrow$<br>
+\dArr: $\dArr$, \dnArr: $\dnArr$, \dnArrow: $\dnArrow$, \Downarrow: $\Downarrow$<br>
+\diverges: $\diverges$, \uarr: $\uarr$, \uparrow: $\uparrow$<br>
+\uArr: $\uArr$, \Uparrow: $\Uparrow$ <br>
+\to: $\to$, \rarr: $\rarr$, \rightarrow: $\rightarrow$ <br>
+\implies: $\implies$, \rArr: $\rArr$, \Rightarrow: $\Rightarrow$ <br>
+\gets: $\gets$, \larr: $\larr$, \leftarrow: $\leftarrow$ <br>
+\impliedby: $\impliedby$, \lArr: $\lArr$, \Leftarrow: $\Leftarrow$ <br>
+\harr: $\harr$, \lrarr: $\lrarr$, \leftrightarrow: $\leftrightarrow$<br>
+\iff: $\iff$, \hArr: $\hArr$, \lrArr: $\lrArr$, \Leftrightarrow: $\Leftrightarrow$<br>
+<br>
+\Re: $\Re$, \Real: $\Real$, \real: $\real$ <br>
+\Im: $\Im$, \imag: $\imag$, \image: $\image$, \imagin: $\imagin$, \imaginary: $\imaginary$, \Imaginary: $\Imaginary$<br>
+\part: $\part$, \partial: $\partial$ <br>
+<br>
+\inf: $\inf$, \infin: $\infin$, \infty: $\infty$, \infinity: $\infinity$<br>
+\alef: $\alef$, \alefsym: $\alefsym$, \aleph: $\aleph$, \alephsym: $\alephsym$<br>
+<br>
+\forall: $\forall$ thankfully mathquill has only one version of forall [PJ]<br>
+\xist: $\xist$, \xists: $\xists$, \exist: $\exist$, \exists: $\exists$<br>
+\and: $\and$, \land: $\land$, \wedge: $\wedge$<br>
+\or: $\or$, \lor: $\lor$, \vee: $\vee$ <br>
+<br>
+\o: $\o$, \O: $\O$, \empty: $\empty$, \emptyset: $\emptyset$, \oslash: $\oslash$, \Oslash: $\Oslash$, \nothing: $\nothing$, \varnothing: $\varnothing$<br>
+\cup: $\cup$, \union: $\union$ <br>
+\cap: $\cap$, \intersect: $\intersect$, \intersection: $\intersection$<br>
+<br>
+\deg: $\deg$, \degree: $\degree$ <br>
+\ang: $\ang$, \angle: $\angle$ <br>
+<br>
+\ln: $\ln$<br>
+\lg: $\lg$<br>
+\log: $\log$<br>
+\span: $\span$<br>
+\proj: $\proj$<br>
+\det: $\det$<br>
+\dim: $\dim$<br>
+\min: $\min$<br>
+\max: $\max$<br>
+\mod: $\mod$<br>
+\lcm: $\lcm$<br>
+\gcd: $\gcd$, \gcf: $\gcf$, \hcf: $\hcf$<br>
+\lim: $\lim$ <br>
+<br>
+\sin: $\sin$<br>
+\cos: $\cos$<br>
+\tan: $\tan$<br>
+\sec: $\sec$<br>
+\cosec: $\cosec$, \csc: $\csc$<br>
+\cotan: $\cotan$, \cot: $\cot$<br>
+<br>
+\sinh: $\sinh$<br>
+\cosh: $\cosh$<br>
+\tanh: $\tanh$<br>
+\sech: $\sech$<br>
+\cosech: $\cosech$, \csch: $\csch$<br>
+\cotanh: $\cotanh$, \coth: $\coth$<br>
+<br>
+\asin: $\asin$<br>
+\acos: $\acos$<br>
+\atan: $\atan$<br>
+\asec: $\asec$<br>
+\acosec: $\acosec$, \acsc: $\acsc$<br>
+\acotan: $\acotan$, \acot: $\acot$<br>
+<br>
+\asinh: $\asinh$<br>
+\acosh: $\acosh$<br>
+\atanh: $\atanh$<br>
+\asech: $\asech$<br>
+\acosech: $\acosech$, \acsch: $\acsch$<br>
+\acotanh: $\acotanh$, \acoth: $\acoth$<br>
+<br>
+\arcsin: $\arcsin$<br>
+\arccos: $\arccos$<br>
+\arctan: $\arctan$<br>
+\arcsec: $\arcsec$<br>
+\arccosec: $\arccosec$, \arccsc: $\arccsc$<br>
+\arccotan: $\arccotan$, \arccot: $\arccot$<br>
+<br>
+\arcsinh: $\arcsinh$<br>
+\arccosh: $\arccosh$<br>
+\arctanh: $\arctanh$<br>
+\arcsech: $\arcsech$<br>
+\arccosech: $\arccosech$, \arccsch: $\arccsch$<br>
+\arccotanh: $\arccotanh$, \arccoth: $\arccoth$
+</div>
+</body>
+</html>

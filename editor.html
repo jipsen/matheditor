@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=624">
+
+<title>MathQuill Editor Demo</title>
+
+<link rel="stylesheet" type="text/css" href="editor.css">
+<link rel="stylesheet" type="text/css" href="mathquill.css">
+
+<style type="text/css">
+</style>
+
+</head>
+<body>
+<div id="body">
+
+<p>A MathQuill textbox that let's you type math between $'s: 
+<div id="editable-math" class="mathquill-textbox" style="width:100%;vertical-align:top">The Quadratic Formula is $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$</div>
+</p>
+
+<p>Latex source: <br>
+<textarea id="latex-source" style="width:100%;vertical-align:top"></textarea>
+</p>
+
+<p>Another (empty) textbox:
+<div id="edit-mq" class="mathquill-textbox" style="width:100%">Let's solve the quadratic equation $ax^2+bx+c=0$.
+
+Assuming $a\ne0$, we divide by $a$ to get
+
+$x^2+\frac{b}{a}x+\frac{c}{a}=0$. Next we complete the square: 
+
+$x^2+\frac{b}{a}x+\left(\frac{b}{2a}\right)^2-\left(\frac{b}{2a}\right)^2+\frac{c}{a}=0$. Therefore 
+
+$\left(x+\frac{b}{2a}\right)^2=\frac{b^2}{4a^2}-\frac{c}{a}$.
+
+Applying squareroot on both sides and simplifying gives 
+
+$x+\frac{b}{2a}=\frac{\pm\sqrt{b^2-4ac}}{2a}$ so we get the solutions $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.</div>
+</p>
+
+<p>Latex source: <br>
+<textarea id="latex-source2" style="width:100%;min-height:3in"></textarea>
+</p>
+</div>
+<script type="text/javascript" src="jquery-1.7.2.js"></script>
+<script type="text/javascript" src="mathquill.js"></script>
+<script type="text/javascript">
+
+var latexMath = $('#editable-math'), latexSource = $('#latex-source'), latexMath2 = $('#edit-mq'), latexSource2 = $('#latex-source2');
+
+$(function() {
+  latexMath.bind('keydown keypress', function() {
+    setTimeout(function() {
+      var latex = latexMath.mathquill('latex');
+      latexSource.val(latex);
+    });
+  }).keydown().focus();
+
+  latexSource.bind('keydown keypress', function() {
+    var oldtext = latexSource.val();
+    setTimeout(function() {
+      var newtext = latexSource.val();
+      if(newtext !== oldtext) {
+        latexMath.mathquill('latex', newtext);
+      }
+    });
+  });
+});
+
+$(function() {
+  latexMath2.bind('keydown keypress', function() {
+    setTimeout(function() {
+      var latex = latexMath2.mathquill('latex');
+      latexSource2.val(latex);
+    });
+  }).keydown().focus();
+
+  latexSource2.bind('keydown keypress', function() {
+    var oldtext = latexSource2.val();
+    setTimeout(function() {
+      var newtext = latexSource2.val();
+      if(newtext !== oldtext) {
+        latexMath2.mathquill('latex', newtext);
+      }
+    });
+  });
+});
+
+</script>
+</body>
+</html>
