@@ -11,7 +11,7 @@ How does it differ from the original MathQuill textbox:
 
 - "Enter" works in the text sections
 - Some tweaks by David Lippman make MathQuill work for iOS and Android
-- Adjustments of CSS make the scriptsize a bit smaller (80%)
+- Adjustments of CSS, e.g. make the scriptsize a bit smaller (80%)
 
 To do:
 
@@ -22,7 +22,6 @@ To do:
 
 Would be nice:
 
-- Autosave
 - Undo/redo
 - Displayed (i.e. centered) math formulas
 - Piecewise defined function notation
@@ -31,3 +30,5 @@ Would be nice:
 - Allow definition of constants and functions
 - Include simple math checker
 - Add some symbolic one-step operations (pick result from a list)
+
+Probably it would be better to use only the MathQuill formula editor from within a contenteditable <div>. That way the text editing is handled by the browser and only the formula editing/display is done by MathQuill. When the cursor enters a MathQuill box, an event handler will call the appropriate MathQuill code.
