@@ -31,4 +31,4 @@ Would be nice:
 - Include simple math checker
 - Add some symbolic one-step operations (pick result from a list)
 
-Probably it would be better to use only the MathQuill formula editor from within a contenteditable <div>. That way the text editing is handled by the browser and only the formula editing/display is done by MathQuill. When the cursor enters a MathQuill box, an event handler will call the appropriate MathQuill code.
+Probably it would be better to use only the MathQuill formula editor from within a contenteditable &lt;div>. That way the text editing is handled by the browser and only the formula editing/display is done by MathQuill. When the cursor enters a MathQuill box, an event handler will call the appropriate MathQuill code.
