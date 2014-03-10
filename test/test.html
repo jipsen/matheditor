@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=624">
+
+<title>MathQuill Demo</title>
+
+<link rel="stylesheet" type="text/css" href="../editor.css">
+<link rel="stylesheet" type="text/css" href="../mathquill.css">
+
+<style type="text/css">
+code span {
+  font: 90% Verdana, sans-serif;
+}
+#codecogsimg {
+  vertical-align: middle;
+  border: none;
+}
+.mathquill-textbox {
+  width: 100%;
+}
+#html-source {
+  display: none;
+  font-size: 90%;
+  white-space: pre-wrap;
+}
+.mathquill-rendered-math .mathquill-editable {
+  min-width: 1cm;
+}
+</style>
+
+</head>
+<body>
+<div id="body">
+<h3>Complete(?) list of MathQuill symbols</h3>
+<h4>Peter Jipsen, February 2014</h4>
+Below is a list of (almost?) all MathQuill symbols and what MathQuill
+displays. The file also indicates the impressive speed with which MathQuill
+displays this many symbols. The information is mostly copied from
+mathquill.js. The MathQuill syntax is similar to LaTeX, but with some
+quirks (other issues mentioned in symbol list):
+<p>
+Escaped-dollar: \$ (works in file but not when typed: creates "\ mathbox")
+<p>
+&lt; and > in mathquill-textbox causes box not to display
+<p>
+Unrecognized latex command (e.g. $\,$ or $\son$) in mathquill-textbox causes box not to display
+<p>
+Firefox print-preview only shows first page of mathquill-textbox
+<p>
+Here is the same list <a href="MathQuillsymbolsMathJax.html">displayed by MathJax</a>
+
+<div class="mathquill-textbox">\mathrm: $\mathrm{abc123@#%}$
+\mathit: $\mathit{abc123@#%}$ does it work?? cf. $abc123@#%$
+\mathbf: $\mathbf{abc123@#%}$
+\mathsf: $\mathsf{abc123@#%}$
+\mathtt: $\mathtt{abc123@#%}$
+\mathcal, \mathfrak: not available
+
+\underline: $\underline{xyz}$, \underline{\sqrt x}: $\underline{\sqrt x}$
+
+\overline{xyz}: $\overline{xyz}$, \overline{\sqrt x}$\overline{\sqrt x}$
+
+SubSup x_1^2: $x_1^2$, x_{1}^{2}: $x_{1}^{2}$
+
+subscript x_11 $x_11$, x_{11}: $x_{11}$, x\subscript11: $x\subscript11$
+
+superscript x^12: $x^12$, x^{12}: $x^{12}$, x\superscript12: $x\superscript12$, x\supscript12: $x\supscript12$
+
+\frac xy: $\frac xy$, \dfrac xy: $\dfrac xy$, \cfrac xy: $\cfrac xy$, \fraction xy: $\fraction xy$
+
+xy\over uv: $xy over uv$,   x{y\over u}v: $x{y over u}v$ only for live fractions
+
+xy/uv: $xy/uv$,   x{y/u}v: $x{y/u}v$ only for live fractions
+
+\sqrt{x^2}: $\sqrt{x^2}$, \sqrt[n]{x^n}: $\sqrt[n]{x^n}$, root and bar have small gap in Firefox
+
+(), [], \left\{\right\}, \langle, \rangle: $(), [], (], \left\{\right\}, leftlangle rightrangle$, \left{\right} need to be matched, \{\},\langle,\rangle don't work??
+
+& lang; $&lang;$, & rang; $&rang;$, 
+
+pipe |: $|x$ works unmatched
+
+x\text{ hi }y: $x\text{ hi }y$
+x\textnormal{ hi }y: $x\textnormal{ hi }y$ 
+x\textrm{ hi }y: $x\textrm{ hi }y$ 
+x\textup{ hi }y: $x\textup{ hi }y$
+x\textmd{ hi }y: $x\textmd{ hi }y$
+a \emph{all}b: $a \emph{all}b$, a \em{all}b: $a \em{all}b$ why do \em??
+a \italic{all}b: $a \italic{all}b$, a \italics{all}b: $a \italics{all}b$ ??
+x\textit{ hi }y: $x\textit{ hi }y$
+x\textbf{ hi }y: $x\textbf{ hi }y$, x\bold{ hi }y: $x\bold{ hi }y$, x\strong{ hi }y: $x\strong{ hi }y$, 
+x\textsf{ hi }y: $x\textsf{ hi }y$, x\sf{ hi }y: $x\sf{ hi }y$
+x\texttt{ hi }y: $x\texttt{ hi }y$, x\tt{ hi }y: $x\tt{ hi }y$
+x\textsc{ HIhi }y: $x\textsc{ HIhi }y$
+x\uppercase{ HIhi }y: $x\uppercase{ HIhi }y$
+x\lowercase{ HIhi }y: $x\lowercase{ HIhi }y$
+
+\binom nk: $\binom nk$
+
+n\choose k: $n choose k$ does it work?
+
+\vector?
+
+\f: $\f$ ?? why?
+
+prime x': $x'$, x'': $x''$, x''': $x'''$
+
+@: $@$, \&; $\&$, \%: $\%$, %: $%$
+
+\alpha: $\alpha$
+\beta: $\beta$
+\gamma: $\gamma$
+\delta: $\delta$
+\zeta: $\zeta$
+\eta: $\eta$
+\theta: $\theta$
+\iota: $\iota$
+\kappa: $\kappa$
+\mu: $\mu$
+\nu: $\nu$
+\xi: $\xi$
+\rho: $\rho$
+\sigma: $\sigma$
+\tau: $\tau$
+\chi: $\chi$
+\psi: $\psi$
+
+\phi: $\phi$ //W3C or Unicode?  [PJipsen: Comments from mathquill.js]
+\phiv: $\phiv$ //Elsevier and 9573-13
+\varphi: $\varphi$ //AMS and LaTeX
+
+\epsilon: $\epsilon$ //W3C or Unicode?
+\epsiv: $\epsiv$ //Elsevier and 9573-13
+\varepsilon: $\varepsilon$ //AMS and LaTeX
+
+\piv: $\piv$ //W3C/Unicode and Elsevier and 9573-13
+\varpi: $\varpi$ //AMS and LaTeX
+
+\sigmaf: $\sigmaf$ //W3C/Unicode
+\sigmav: $\sigmav$ //Elsevier
+\varsigma: $\varsigma$ //LaTeX
+
+\thetav: $\thetav$ //Elsevier and 9573-13
+\vartheta: $\vartheta$ //AMS and LaTeX
+\thetasym: $\thetasym$ //W3C/Unicode
+
+\upsilon: $\upsilon$ //AMS and LaTeX and W3C/Unicode
+\upsi: $\upsi$ //Elsevier and 9573-13
+
+//these aren't even mentioned in the HTML character entity references
+\gammad: $\gammad$ //Elsevier
+\Gammad: $\Gammad$ //9573-13 -- was this a typo in the reference (see above)
+\digamma: $\digamma$ //LaTeX
+
+\kappav: $\kappav$ //Elsevier
+\varkappa: $\varkappa$ //AMS and LaTeX
+
+\rhov: $\rhov$ //Elsevier and 9573-13
+\varrho: $\varrho$ //AMS and LaTeX
+
+//Greek constants, look best in un-italicised Times New Roman
+\pi: $\pi$ 
+\lambda: $\lambda$ 
+
+//uppercase greek letters
+\Upsilon: $\Upsilon$ //LaTeX
+\Upsi: $\Upsi$ //Elsevier and 9573-13
+\upsih: $\upsih$ //W3C/Unicode "upsilon with hook"
+\Upsih: $\Upsih$ //'cos it makes sense to me
+
+//other symbols with the same LaTeX command and HTML character entity reference
+\Gamma: $\Gamma$
+\Delta: $\Delta$
+\Theta: $\Theta$
+\Lambda: $\Lambda$
+\Xi: $\Xi$
+\Pi: $\Pi$
+\Sigma: $\Sigma$
+\Phi: $\Phi$
+\Psi: $\Psi$
+\Omega: $\Omega$
+
+Algebra
+$x+y$
+$x-y$, unary minus $-x$
+$\pm x$, $\mp x$
+x*y: $x*y$,    x\cdot y: $x\cdot y$,    x\sdot y: $x\sdot y$
+x=y: $x=y$, x & lt; y: $x \lt y$, x& gt;y: $x \gt y$ can't use lt, gt on keyboard
+
+\sim: $\sim$
+\cong: $\cong$
+\equiv: $\equiv$
+\oplus: $\oplus$
+\otimes: $\otimes$ 
+\times: $\times$ 
+\div: $\div$, \divide: $\divide$, \divides: $\divides$
+\ne: $\ne$, \neq: $\neq$ 
+\ast: $\ast$, \star: $\star$, \loast: $\loast$, \lowast: $\lowast$
+\therefor: $\therefor$, \therefore: $\therefore$
+\cuz: $\cuz$, \because: $\because$ 
+
+\prop: $\prop$, \propto: $\propto$ 
+\asymp: $\asymp$, \approx: $\approx$ 
+
+\lt: $\lt$ 
+\gt: $\gt$ 
+\le: $\le$, \leq: $\leq$ 
+\ge: $\ge$, \geq: $\geq$ 
+\isin: $\isin$, \in: $\in$ 
+\notin: $\notin$
+\ni: $\ni$, \contains: $\contains$ 
+\notni: $\notni$, \niton: $\niton$, \notcontains: $\notcontains$, \doesnotcontain: $\doesnotcontain$
+
+\sub: $\sub$, \subset: $\subset$ 
+\sup: $\sup$, \supset: $\supset$, \superset: $\superset$
+\nsub: $\nsub$, \notsub: $\notsub$, \nsubset: $\nsubset$, \notsubset: $\notsubset$
+\nsup: $\nsup$, \notsup: $\notsup$, \nsupset: $\nsupset$, \notsupset: $\notsupset$, \nsuperset: $\nsuperset$, \notsuperset: $\notsuperset$
+
+\sube: $\sube$, \subeq: $\subeq$, \subsete: $\subsete$, \subseteq: $\subseteq$
+\supe: $\supe$, \supeq: $\supeq$, \supsete: $\supsete$, \supseteq: $\supseteq$, \supersete: $\supersete$, \superseteq: $\superseteq$
+
+\nsube: $\nsube$, \nsubeq: $\nsubeq$, \notsube: $\notsube$, \notsubeq: $\notsubeq$, \nsubsete: $\nsubsete$, \nsubseteq: $\nsubseteq$, \notsubsete: $\notsubsete$, \notsubseteq: $\notsubseteq$
+\nsupe: $\nsupe$, \nsupeq: $\nsupeq$, \notsupe: $\notsupe$, \notsupeq: $\notsupeq$, \nsupsete: $\nsupsete$, \nsupseteq: $\nsupseteq$, \notsupsete: $\notsupsete$, \notsupseteq: $\notsupseteq$, \nsupersete: $\nsupersete$, \nsuperseteq: $\nsuperseteq$, \notsupersete: $\notsupersete$, \notsuperseteq: $\notsuperseteq$
+
+//sum, product, coproduct, integral
+\sum: $\sum$, \summation: $\summation$ 
+\prod: $\prod$, \product: $\product$ 
+\coprod: $\coprod$, \coproduct: $\coproduct$ 
+\int: $\int$, \integral: $\integral$ 
+
+//the canonical sets of numbers
+\N: $\N$, \naturals: $\naturals$, \Naturals: $\Naturals$
+
+\P: $\P$, \primes: $\primes$, \Primes: $\Primes$, \projective: $\projective$, \Projective: $\Projective$, \probability: $\probability$, \Probability: $\Probability$
+
+\Z: $\Z$, \integers: $\integers$, \Integers: $\Integers$
+
+\Q: $\Q$, \rationals: $\rationals$, \Rationals: $\Rationals$
+
+\R: $\R$, \reals: $\reals$, \Reals: $\Reals$
+
+\C: $\C$, \complex: $\complex$, \Complex: $\Complex$, \complexes: $\complexes$, \Complexes: $\Complexes$, \complexplane: $\complexplane$, \Complexplane: $\Complexplane$, \ComplexPlane: $\ComplexPlane$
+
+\H: $\H$, \Hamiltonian: $\Hamiltonian$, \quaternions: $\quaternions$, \Quaternions: $\Quaternions$
+
+//spacing
+\quad: $|\quad|$, \emsp: $|\emsp|$, \qquad: $|\qquad|$ 
+
+\, \,, \: \:,  \; \;,  \! \!  //these cause mathquill-textbox errors??
+
+//binary operators
+\diamond: $\diamond$ 
+\bigtriangleup: $\bigtriangleup$ 
+\ominus: $\ominus$ 
+\uplus: $\uplus$ 
+\bigtriangledown: $\bigtriangledown$ 
+\sqcap: $\sqcap$ 
+\triangleleft: $\triangleleft$ 
+\sqcup: $\sqcup$ 
+\triangleright: $\triangleright$ 
+\odot: $\odot$ 
+\bigcirc: $\bigcirc$ 
+\dagger: $\dagger$ 
+\ddagger: $\ddagger$ 
+\wr: $\wr$ 
+\amalg: $\amalg$ 
+
+//relationship symbols
+\models: $\models$ 
+\prec: $\prec$ 
+\succ: $\succ$ 
+\preceq: $\preceq$ 
+\succeq: $\succeq$ 
+\simeq: $\simeq$ 
+\mid: $\mid$ 
+\ll: $\ll$ 
+\gg: $\gg$ 
+\parallel: $\parallel$ 
+\bowtie: $\bowtie$ 
+\sqsubset: $\sqsubset$ 
+\sqsupset: $\sqsupset$ 
+\smile: $\smile$ 
+\sqsubseteq: $\sqsubseteq$ 
+\sqsupseteq: $\sqsupseteq$ 
+\doteq: $\doteq$ 
+\frown: $\frown$ 
+\vdash: $\vdash$ 
+\dashv: $\dashv$ 
+
+//arrows
+\longleftarrow: $\longleftarrow$ 
+\longrightarrow: $\longrightarrow$ 
+\Longleftarrow: $\Longleftarrow$ 
+\Longrightarrow: $\Longrightarrow$ 
+\longleftrightarrow: $\longleftrightarrow$ 
+\updownarrow: $\updownarrow$ 
+\Longleftrightarrow: $\Longleftrightarrow$ 
+\Updownarrow: $\Updownarrow$ 
+\mapsto: $\mapsto$ 
+\nearrow: $\nearrow$ 
+\hookleftarrow: $\hookleftarrow$ 
+\hookrightarrow: $\hookrightarrow$ 
+\searrow: $\searrow$ 
+\leftharpoonup: $\leftharpoonup$ 
+\rightharpoonup: $\rightharpoonup$ 
+\swarrow: $\swarrow$ 
+\leftharpoondown: $\leftharpoondown$ 
+\rightharpoondown: $\rightharpoondown$ 
+\nwarrow: $\nwarrow$ 
+
+//Misc
+\ldots: $\ldots$ 
+\cdots: $\cdots$ 
+\vdots: $\vdots$ 
+\ddots: $\ddots$ 
+\surd: $\surd$ 
+\triangle: $\triangle$ 
+\ell: $\ell$ 
+\top: $\top$ 
+\flat: $\flat$ 
+\natural: $\natural$ 
+\sharp: $\sharp$ 
+\wp: $\wp$ 
+\bot: $\bot$ 
+\clubsuit: $\clubsuit$ 
+\diamondsuit: $\diamondsuit$ 
+\heartsuit: $\heartsuit$ 
+\spadesuit: $\spadesuit$ 
+
+//variable-sized
+\oint: $\oint$ 
+\bigcap: $\bigcap$ 
+\bigcup: $\bigcup$ 
+\bigsqcup: $\bigsqcup$ 
+\bigvee: $\bigvee$ 
+\bigwedge: $\bigwedge$ 
+\bigodot: $\bigodot$ 
+\bigotimes: $\bigotimes$ 
+\bigoplus: $\bigoplus$ 
+\biguplus: $\biguplus$ 
+
+//delimiters
+\lfloor: $\lfloor$ 
+\rfloor: $\rfloor$ 
+\lceil: $\lceil$ 
+\rceil: $\rceil$ 
+\slash: $\slash$ 
+\opencurlybrace: $\opencurlybrace$ 
+\closecurlybrace: $\closecurlybrace$ 
+
+//various symbols
+\caret: $\caret$ 
+\underscore: $\underscore$ 
+\backslash: $\backslash$ 
+\vert: $\vert$ 
+\perp: $\perp$, \perpendicular: $\perpendicular$ 
+\nabla: $\nabla$, \del: $\del$ 
+\hbar: $\hbar$ 
+\AA: $\AA$, \Angstrom: $\Angstrom$, \angstrom: $\angstrom$
+\ring: $\ring$, \circ: $\circ$, \circle: $\circle$
+\bull: $\bull$, \bullet: $\bullet$ 
+\setminus: $\setminus$, \smallsetminus: $\smallsetminus$
+\not: $\not$, \neg: $\neg$ 
+\dots: $\dots$, \ellip: $\ellip$, \hellip: $\hellip$, \ellipsis: $\ellipsis$, \hellipsis: $\hellipsis$
+
+\converges: $\converges$, \darr: $\darr$, \dnarr: $\dnarr$, \dnarrow: $\dnarrow$, \downarrow: $\downarrow$
+\dArr: $\dArr$, \dnArr: $\dnArr$, \dnArrow: $\dnArrow$, \Downarrow: $\Downarrow$
+\diverges: $\diverges$, \uarr: $\uarr$, \uparrow: $\uparrow$
+\uArr: $\uArr$, \Uparrow: $\Uparrow$ 
+\to: $\to$, \rarr: $\rarr$, \rightarrow: $\rightarrow$ 
+\implies: $\implies$, \rArr: $\rArr$, \Rightarrow: $\Rightarrow$ 
+\gets: $\gets$, \larr: $\larr$, \leftarrow: $\leftarrow$ 
+\impliedby: $\impliedby$, \lArr: $\lArr$, \Leftarrow: $\Leftarrow$ 
+\harr: $\harr$, \lrarr: $\lrarr$, \leftrightarrow: $\leftrightarrow$
+\iff: $\iff$, \hArr: $\hArr$, \lrArr: $\lrArr$, \Leftrightarrow: $\Leftrightarrow$
+
+\Re: $\Re$, \Real: $\Real$, \real: $\real$ 
+\Im: $\Im$, \imag: $\imag$, \image: $\image$, \imagin: $\imagin$, \imaginary: $\imaginary$, \Imaginary: $\Imaginary$
+\part: $\part$, \partial: $\partial$ 
+
+\inf: $\inf$, \infin: $\infin$, \infty: $\infty$, \infinity: $\infinity$
+\alef: $\alef$, \alefsym: $\alefsym$, \aleph: $\aleph$, \alephsym: $\alephsym$
+
+\forall: $\forall$ thankfully mathquill has only one version of forall [PJ]
+\xist: $\xist$, \xists: $\xists$, \exist: $\exist$, \exists: $\exists$
+\and: $\and$, \land: $\land$, \wedge: $\wedge$
+\or: $\or$, \lor: $\lor$, \vee: $\vee$ 
+
+\o: $\o$, \O: $\O$, \empty: $\empty$, \emptyset: $\emptyset$, \oslash: $\oslash$, \Oslash: $\Oslash$, \nothing: $\nothing$, \varnothing: $\varnothing$
+\cup: $\cup$, \union: $\union$ 
+\cap: $\cap$, \intersect: $\intersect$, \intersection: $\intersection$
+
+\deg: $\deg$, \degree: $\degree$ 
+\ang: $\ang$, \angle: $\angle$ 
+
+\ln: $\ln$
+\lg: $\lg$
+\log: $\log$
+\span: $\span$
+\proj: $\proj$
+\det: $\det$
+\dim: $\dim$
+\min: $\min$
+\max: $\max$
+\mod: $\mod$
+\lcm: $\lcm$
+\gcd: $\gcd$, \gcf: $\gcf$, \hcf: $\hcf$
+\lim: $\lim$ 
+
+\sin: $\sin$
+\cos: $\cos$
+\tan: $\tan$
+\sec: $\sec$
+\cosec: $\cosec$, \csc: $\csc$
+\cotan: $\cotan$, \cot: $\cot$
+
+\sinh: $\sinh$
+\cosh: $\cosh$
+\tanh: $\tanh$
+\sech: $\sech$
+\cosech: $\cosech$, \csch: $\csch$
+\cotanh: $\cotanh$, \coth: $\coth$
+
+\asin: $\asin$
+\acos: $\acos$
+\atan: $\atan$
+\asec: $\asec$
+\acosec: $\acosec$, \acsc: $\acsc$
+\acotan: $\acotan$, \acot: $\acot$
+
+\asinh: $\asinh$
+\acosh: $\acosh$
+\atanh: $\atanh$
+\asech: $\asech$
+\acosech: $\acosech$, \acsch: $\acsch$
+\acotanh: $\acotanh$, \acoth: $\acoth$
+
+\arcsin: $\arcsin$
+\arccos: $\arccos$
+\arctan: $\arctan$
+\arcsec: $\arcsec$
+\arccosec: $\arccosec$, \arccsc: $\arccsc$
+\arccotan: $\arccotan$, \arccot: $\arccot$
+
+\arcsinh: $\arcsinh$
+\arccosh: $\arccosh$
+\arctanh: $\arctanh$
+\arcsech: $\arcsech$
+\arccosech: $\arccosech$, \arccsch: $\arccsch$
+\arccotanh: $\arccotanh$, \arccoth: $\arccoth$
+
+
+Synonymous keypresses:
+
+Backspace, Shift-backspace
+
+Esc, Tab, Spacebar: move cursor right
+
+Shift-Esc, Shift-Tab, Shift-spacebar: move cursor left
+
+Enter: prevent newlines from showing up??
+
+Up-arrow, downarrow: don't move between lines, only inside formulas??
+
+End: move to the end of the current block
+
+Ctrl-End: move all the way to the end of the root block
+
+Shift-End: select to the end of the current block
+
+Shift-Ctrl-End: select all the way to the end of the root block
+
+Home: move to the start of the root block or the current block
+
+Ctrl-Home: move to the start of the current block.
+
+Shift-Home: select to the start of the current block.
+
+Ctrl-Shift-Home: move to the start of the root block.
+
+Left:        moveLeft
+Shift-Left:  selectLeft
+Ctrl-Left:
+Right:       moveRight
+Shift-Right: selectRight
+Ctrl-Right:
+Up:          moveUp
+Down:        moveDown
+Shift-Up:
+Shift-Down:
+Ctrl-Up:
+Ctrl-Down:
+Ctrl-Shift-Del:
+Ctrl-Del:
+Shift-Del:
+Del:
+Meta-A:
+Ctrl-A:
+</div>
+
+</div>
+<script type="text/javascript" src="../jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../mathquill.js"></script>
+</body>
+</html>
