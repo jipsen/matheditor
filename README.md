@@ -7,6 +7,8 @@ math editor that can be used to conveniently type math homework and research
 papers. The present version is based on the MathQuill textbox and is already
 usable, though there are several issues that need to be addressed.
 
+See http://math.chapman.edu/~jipsen/matheditor/ for a demo version (enter "testing" as Key to enable saving).
+
 How does it differ from the original MathQuill textbox:
 
 - "Enter" works in the text sections
@@ -18,7 +20,7 @@ To do:
 - Enable cursor up/down movement in text
 - Get backspace working in Android
 - Fix copy/paste, especially with formulas
-- Make editing on smartphones and tablets convenient
+- Make editing on smartphones and tablets convenient (e.g. prevent scrolling to top of textbox)
 
 Would be nice:
 
