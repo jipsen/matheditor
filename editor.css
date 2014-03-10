@@ -23,6 +23,12 @@ h1 {
 h1 small {
   font-size: 60%;
 }
+#key, #logout {
+  float: right;
+}
+.mathquill-textbox {
+  width:100%;
+}
 code {
   font: 90% monospace;
   background: #DDD;

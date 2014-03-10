@@ -2655,18 +2655,19 @@ var Variable = P(Symbol, function(_, _super) {
 		  d = d[L];
 	  }
 	  var m;
-	  if (m = lookback.match(/(sqrt|root|arcsin|arccos|arctan|sin|cos|tan|sec|csc|cot|log|ln)/)) {
+	  if (m = lookback.match(/(sqrt|root|arcsin|arccos|arctan|sin|cos|tan|sec|csc|cot|log|ln|int|gcd|lcm|cup|cap|vee|wedge|sube|supe|forall|exists|alpha|beta|gamma|Gamma|delta|Delta|lambda|Lambda|mu|phi|psi|theta)$/)) {
 
 	  	  for (var i=0;i<m[0].length-1;i++) {
 	  	  	  c.selectLeft();
 	  	  }
 	  	  if (m[0]=='root') {
-	  	  	  m[0] = 'nthroot{3}';
-	  	  }
-	  	  if (m[0].match(/(sqrt|root)/)) {
-	  	  	  c.writeLatex('\\'+m[0]+'{}').parent.blur();;
+	  	  	  c.writeLatex('\\nthroot{}{}').parent.blur();
+		          c.moveLeft(); //PJ
+	  	  } else if (m[0]=='sqrt') {
+	  	  	  c.writeLatex('\\sqrt{}').parent.blur();
 	  	  } else {
-	  	  	  c.writeLatex('\\'+m[0]+'\\left(\\right)').parent.blur();; 
+	  	  	  c.writeLatex('\\'+m[0]).parent.blur();
+	  	          c.moveRight();
 	  	  }
 	  	  c.moveLeft();
 	  } else if (m = lookback.match(/(pi|^oo)$/)) {

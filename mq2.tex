@@ -1,0 +1,22 @@
+Exercise 2: Use the hint that $\sec x=\sec x\frac{\sec x+\tan x}{\sec x+\tan x}$ to prove that $\int\sec xdx=\ln\left|\sec x+\tan x\right|+C$
+
+Solution: 
+
+Exercise 3: Calculate $\int_0^{\frac{\pi}{2}}\sec xdx$
+
+Solution: $\int_0^{\frac{\pi}{3}}\sec xdx=\left[\ln\left|\sec x+\tan x\right|\right]^{\frac{\pi}{3}}_0=\ln\left|\sec\frac{\pi}{3}+\tan\frac{\pi}{3}\right|-\ln\left|\sec0-\tan0\right|=\ln\left|\frac{1}{\frac{1}{2}}+\frac{\frac{\sqrt{3}}{2}}{\frac{1}{2}}\right|-\ln\left|1-0\right|$
+$=\ln\left|2+\sqrt{3}\right|-0$
+
+Exercise 4: Find the arc length of the spiral $r=e^{k\theta}$ when $\theta$ varies from $0$ to $2\pi$.  
+
+Solution: First we derive the arc length formula for polar curves $r=f\left(t\right)$ from the one for parametric curves. The latter is 
+
+$L=\int_a^b\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$, and $x=r\cos t$, $y=r\sin t$ so we get $\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2=\left(r'\cos t-r\sin t\right)^2+\left(r'\sin t+r\cos t\right)^2$
+
+$=\left(r'\cos t\right)^2-2rr'\cos t\sin t+\left(r\sin t\right)^2+\left(r'\sin t\right)^2+2rr'\sin t\cos t+\left(r\cos t\right)^2=\left(\frac{dr}{dt}\right)^2+r^2$, hence the formula is
+
+$L=\int_a^b\sqrt{\left(\frac{dr}{d\theta}\right)^2+r^2}d\theta$.
+
+So to solve Ex. 4, we calculate $L=\int_0^{2\pi}\sqrt{\frac{d}{d\theta}\left(e^{k\theta}\right)^2+\left(e^{k\theta}\right)^2}d\theta=\int_0^{2\pi}\sqrt{k^2e^{2k\theta}+e^{2k\theta}}d\theta=\sqrt{k^2+1}\int_0^{2\pi}e^{k\theta}d\theta=\frac{\sqrt{k^2+1}}{k}\left[e^{k\theta}\right]^{2\pi}_0$
+
+$=\frac{\sqrt{k^2+1}}{k}\left(e^{2\pi k}-1\right)$
